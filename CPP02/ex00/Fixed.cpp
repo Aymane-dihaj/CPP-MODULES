@@ -6,7 +6,7 @@
 /*   By: adihaj <adihaj@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 12:38:09 by adihaj            #+#    #+#             */
-/*   Updated: 2023/09/23 12:57:10 by adihaj           ###   ########.fr       */
+/*   Updated: 2023/09/30 22:10:57 by adihaj           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Fixed::Fixed()
 {
     std::cout << "constructor called\n";
-    value = 0;
+    this->value = 0;
 }
 
 Fixed::Fixed(const Fixed& other)
