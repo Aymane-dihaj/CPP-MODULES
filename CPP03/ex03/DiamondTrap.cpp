@@ -13,6 +13,8 @@
 #include "DiamondTrap.hpp"
 
 
+// Constructors and destructors and operators
+
 DiamondTrap::DiamondTrap() {
     ClapTrap::Name = "Unknown_clap_name";
     this->Name = "unknown";

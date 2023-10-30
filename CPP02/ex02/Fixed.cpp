@@ -6,7 +6,7 @@
 /*   By: adihaj <adihaj@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 19:07:33 by adihaj            #+#    #+#             */
-/*   Updated: 2023/10/02 21:29:08 by adihaj           ###   ########.fr       */
+/*   Updated: 2023/10/28 17:40:34 by adihaj           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ Fixed   Fixed::operator*(const Fixed& other) const
 {
     Fixed   result;
 
-    result.setRawBits(((this->getRawBits() * other.getRawBits()) / 256));
+    result.setRawBits(((this->getRawBits() * other.getRawBits())) / 256);
     return result;
 }
 
