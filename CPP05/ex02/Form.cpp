@@ -78,3 +78,11 @@ std::ostream &operator<<(std::ostream &cout, Form &obj) {
             << "\nSigned?: " << (obj.getIsSigned() == 0? "false" : "true");
     return cout;
 }
+
+
+Form::FormIsNotSigned::FormIsNotSigned() {}
+Form::FormIsNotSigned::~FormIsNotSigned() throw() {}
+const char *Form::FormIsNotSigned::what() const throw() {
+    return ("[Form]: Form is not signed!\n");
+}
+

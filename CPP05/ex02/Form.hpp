@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef Form_HPP
+#define Form_HPP
 
 
 #include "Bureaucrat.hpp"
@@ -22,6 +22,9 @@ class Form
         void beSigned(Bureaucrat& obj);
         void signForm();
 
+        //pure virtual function
+        virtual void execute(const Bureaucrat& executor) const = 0;
+
         std::string getName() const;
 
         class GradeTooHighException : public std::exception
@@ -38,6 +41,14 @@ class Form
                 GradeTooLowException() throw();
                 virtual ~GradeTooLowException() throw();
                 virtual const char* what() const throw();
+        };
+
+        class FormIsNotSigned : public std::exception
+        {
+            public:
+                FormIsNotSigned();
+                virtual ~FormIsNotSigned() throw();
+                virtual const char *what() const throw();
         };
 
         bool getIsSigned() const;

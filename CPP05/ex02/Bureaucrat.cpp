@@ -11,7 +11,7 @@ Bureaucrat::Bureaucrat(std::string _name, int grade) : name(_name)
     this->grade = grade;
 }
 
-Bureaucrat::~Bureaucrat() throw() {}
+Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(Bureaucrat const & other) : name(other.name)
 {
@@ -86,5 +86,17 @@ void Bureaucrat::signForm(Form& form)
     catch(const std::exception& e)
     {
         std::cout << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+void    Bureaucrat::executeForm(Form const & form)
+{
+    try
+    {
+        if (form.getIsSigned() == false)
+            throw Form::FormIsNotSigned();
+        else if (this->getGrade > form.getGrade2Execute())
+            throw Form::GradeTooLowException();
+        form.execute(*this);
     }
 }
