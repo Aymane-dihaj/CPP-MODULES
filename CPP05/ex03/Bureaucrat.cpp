@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150) {}
+Bureaucrat::Bureaucrat() : name("unkonnu"), grade(150) {}
 
 Bureaucrat::Bureaucrat(std::string _name, int grade) : name(_name)
 {
@@ -11,7 +11,7 @@ Bureaucrat::Bureaucrat(std::string _name, int grade) : name(_name)
     this->grade = grade;
 }
 
-Bureaucrat::~Bureaucrat(){}
+Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(Bureaucrat const & other) : name(other.name)
 {
@@ -76,7 +76,7 @@ std::ostream& operator<<(std::ostream& out, Bureaucrat& src)
     return out;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(AForm& form)
 {
     try
     {
@@ -86,5 +86,22 @@ void Bureaucrat::signForm(Form& form)
     catch(const std::exception& e)
     {
         std::cout << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+void    Bureaucrat::executeForm(AForm const & form)
+{
+    try
+    {
+        if (form.getIsSigned() == false)
+            throw AForm::FormIsNotSigned();
+        else if (this->getGrade() > form.getGrade2Execute())
+            throw AForm::GradeTooLowException();
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+    }
+    catch (const std::exception& exc)
+    {
+        std::cout << exc.what();
     }
 }

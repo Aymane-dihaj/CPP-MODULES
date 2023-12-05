@@ -5,15 +5,15 @@ int main()
     std::cout << "************************************\n\n";
     try
     {
-        Bureaucrat *Rasheed = new Bureaucrat("Rasheed", 99);
+        Bureaucrat *nozel = new Bureaucrat("nozel", 99);
         Form *form = new Form("Access library", false, 100, 100);
 
-        form->beSigned(*Rasheed);
+        form->beSigned(*nozel);
         
         std::cout << *form << '\n';
         
         delete form;
-        delete Rasheed;
+        delete nozel;
     }
     catch (const std::exception &error)
     {
@@ -24,14 +24,14 @@ int main()
     std::cout << "\n************************************\n\n";
     try
     {
-        Bureaucrat *Rasheed = new Bureaucrat("Rasheed", 101);
+        Bureaucrat *nozel = new Bureaucrat("nozel", 101);
         Form *form = new Form("Access library", false, 100, 100);
 
-        Rasheed->signForm(*form);
+        nozel->signForm(*form);
 
         std::cout << '\n' << *form << '\n';
         delete form;
-        delete Rasheed;
+        delete nozel;
     }
     catch (const std::exception &error)
     {

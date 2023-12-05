@@ -8,18 +8,18 @@ int main()
     std::cout << "************************************\n\n";
     try
     {
-        PresidentialPardonForm *a = new PresidentialPardonForm("Killer Ahmed");
-        Bureaucrat *Rasheed = new Bureaucrat("Rasheed", 1);
+        PresidentialPardonForm *a = new PresidentialPardonForm("asta");
+        Bureaucrat *Nozel = new Bureaucrat("Nozel", 2);
 
-        Rasheed->decrementGrade();
+        Nozel->decrementGrade();
 
-        Rasheed->signForm(*a);
-        a->execute(*Rasheed);
-
-        Rasheed->executeForm(*a);
+        Nozel->signForm(*a);
+        std::cout << "==================\n";
+        Nozel->executeForm(*a);
+        std::cout << "==================\n";
 
         delete a;
-        delete Rasheed;
+        delete Nozel;
     }
     catch (std::exception &error)
     {

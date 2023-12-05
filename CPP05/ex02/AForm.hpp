@@ -1,12 +1,12 @@
-#ifndef Form_HPP
-#define Form_HPP
+#ifndef AForm_HPP
+#define AForm_HPP
 
-
+#include <cstdlib>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     private:
         std::string const name;
@@ -14,15 +14,16 @@ class Form
         const int grade2sign;
         const int grade2execute;
     public:
-        Form();
-        Form(std::string _name, bool _is_signed, int required_grade_to_sign
+        AForm();
+        AForm(std::string _name, bool _is_signed, int required_grade_to_sign
         , int required_grade_to_execute);
-        Form(const Form& other);
-        Form& operator=(const Form& other);
+        AForm(const AForm& other);
+        AForm& operator=(const AForm& other);
         void beSigned(Bureaucrat& obj);
-        void signForm();
+        void signAForm();
+        virtual ~AForm();
 
-        //pure virtual function
+        //pure virtual func
         virtual void execute(const Bureaucrat& executor) const = 0;
 
         std::string getName() const;
@@ -57,6 +58,6 @@ class Form
 
 };
 
-std::ostream& operator<<(std::ostream& out, Form& src);
+std::ostream& operator<<(std::ostream& out, AForm& src);
 
 #endif

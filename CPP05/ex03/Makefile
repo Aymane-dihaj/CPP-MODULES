@@ -1,6 +1,7 @@
-NAME = ex02
+NAME = ex03
 
 SRCS = 	Bureaucrat.cpp \
+		Intern.cpp \
 		AForm.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \

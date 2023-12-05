@@ -5,13 +5,13 @@ Bureaucrat::Bureaucrat() : name("unkonnu"), grade(150) {}
 Bureaucrat::Bureaucrat(std::string _name, int grade) : name(_name)
 {
     if (grade > 150)
-        throw GradeTooHighException();
-    if (grade < 1)
         throw GradeTooLowException();
+    if (grade < 1)
+        throw GradeTooHighException();
     this->grade = grade;
 }
 
-Bureaucrat::~Bureaucrat() throw() {}
+Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(Bureaucrat const & other) : name(other.name)
 {

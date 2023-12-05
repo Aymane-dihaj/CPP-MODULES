@@ -44,13 +44,13 @@ std::string Form::getName() const
 
 Form::GradeTooHighException::GradeTooHighException() throw() {}
 Form::GradeTooHighException::~GradeTooHighException() throw() {}
-Form::GradeTooLowException::GradeTooLowException() throw() {}
-Form::GradeTooLowException::~GradeTooLowException() throw() {}
 const char* Form::GradeTooHighException::what() const throw()
 {
     return ("[Form]: Grade is Too high to sign!\n");
 }
 
+Form::GradeTooLowException::GradeTooLowException() throw() {}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}
 const char* Form::GradeTooLowException::what() const throw()
 {
     return ("[Form]: Grade is Too low to sign!\n");
@@ -75,6 +75,8 @@ std::ostream &operator<<(std::ostream &cout, Form &obj) {
     cout    << "Form name: " << obj.getName()
             << "\nGrade required to sign it: " << obj.getGrade2Sign()
             << "\nGrade required to execute it: " << obj.getGrade2Execute()
-            << "\nSigned?: " << (obj.getIsSigned() == 0? "false" : "true");
+            << "\nSigned: " << (obj.getIsSigned() == 0 ? "false" : "true");
     return cout;
 }
+
+Form::~Form(){}
