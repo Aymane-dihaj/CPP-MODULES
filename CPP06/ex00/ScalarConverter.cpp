@@ -3,7 +3,7 @@
 ScalarConverter::ScalarConverter(){}
 ScalarConverter::~ScalarConverter(){}
 ScalarConverter::ScalarConverter(const ScalarConverter& other){(void)other;}
-ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other){(void)other;}
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other){(void)other; return (*this);}
 
 void printChar(double c)
 {
@@ -26,8 +26,21 @@ void    printInt(double c)
         std::cout << "int: " << static_cast<int>(c) << std::endl;
 }
 
+void printFloat(double c)
+{
+    if (c - static_cast<int>(c) > 0 || c - static_cast<int>(c) < 0)
+        std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
+    else
+        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl;
+}
 
-void ScalarConveter(std::string& str)
+void printDouble(double c)
+{
+        std::cout << "double: " << c << std::endl;
+}
+
+
+void ScalarConverter::convert(std::string& str)
 {
     char *leftOver;
     double result;
@@ -47,7 +60,7 @@ void ScalarConveter(std::string& str)
     {
         printChar(result);
         printInt(result);
-        // printFloat(result);
-        // printDouble(result);
+        printFloat(result);
+        printDouble(result);
     }
 }
