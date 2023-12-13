@@ -48,7 +48,7 @@ void ScalarConverter::convert(std::string& str)
     result = std::strtod(str.c_str(), &leftOver);
 
     if (*leftOver && strlen(leftOver) != 1)
-        throw "Error";
+        throw std::runtime_error("Error");
     if (result == 0 && strlen(leftOver) == 1)
     {
         std::cout << "char: '" << leftOver << "'" << std::endl;

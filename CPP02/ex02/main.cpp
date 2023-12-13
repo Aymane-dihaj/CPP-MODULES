@@ -6,7 +6,7 @@
 /*   By: adihaj <adihaj@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 20:00:22 by adihaj            #+#    #+#             */
-/*   Updated: 2023/09/30 22:22:28 by adihaj           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:23:47 by adihaj           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 int main( void ) {
     Fixed a;
     Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+    Fixed c(a);
+    Fixed o ;
+
+    o = a;
 
     std::cout << a << std::endl;
     std::cout << ++a << std::endl;

@@ -6,7 +6,7 @@
 /*   By: adihaj <adihaj@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 19:07:33 by adihaj            #+#    #+#             */
-/*   Updated: 2023/10/28 17:40:34 by adihaj           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:22:25 by adihaj           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
     out << fixed.toFloat();
     return (out);
 }
+
 
 void    Fixed::setRawBits(const int raw)
 {
