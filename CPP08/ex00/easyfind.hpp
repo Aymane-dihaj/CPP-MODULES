@@ -2,18 +2,20 @@
 #define EASYFIND_HPP
 
 #include <iostream>
-#include <vector>
-#include <array>
 #include <algorithm>
+#include <vector>
 
-template<typename T>
-    int easyfind(T &container, int toFind) 
-    {
-        std::vector<int>::iterator it;
+template <typename T>
+int easyfind(T &container, int arg)
+{
+    typename T::iterator iter;
 
-        it = std::find(container.begin(), container.end(), toFind);
-        if (it == container.end()) return -1;
-        return it - container.begin();
-    }
+    iter = std::find(container.begin(), container.end(), arg);
+    if (iter == container.end())
+        return -1;
+    return (iter - container.begin());
+}
+
+
 
 #endif
