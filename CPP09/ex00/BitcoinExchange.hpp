@@ -20,6 +20,14 @@ typedef struct date
     unsigned int month;
 } date;
 
+int countElement(std::string &str, int c)
+{
+    int count = 0;
+    for (size_t i = 0; i < str.length(); i++)
+        if (str.at(i) == c)
+            count++;
+    return count;
+}
 
 std::map<date, float> database;
 

@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+#include <cstdlib>
 
 
 template <typename T> class Array
@@ -64,7 +65,7 @@ template <typename T> class Array
 
         T& operator[](unsigned int idx)
         {
-            if (idx < 0 || idx >= this->size())
+            if (idx >= this->size())
                 throw outOfRange();
             return this->getArray()[idx];
         }
