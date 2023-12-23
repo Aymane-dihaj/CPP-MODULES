@@ -13,23 +13,30 @@
 
 
 
-typedef struct date
+
+
+
+
+class BitcoinExchange
 {
-    unsigned int day;
-    unsigned int year;
-    unsigned int month;
-} date;
+    private:
+        std::map<std::string, double> database;
+        std::string date;
+        double value;
+    public:
+        BitcoinExchange();
+        ~BitcoinExchange();
+        BitcoinExchange(const BitcoinExchange& other);
+        BitcoinExchange& operator=(const BitcoinExchange& other);
 
-int countElement(std::string &str, int c)
-{
-    int count = 0;
-    for (size_t i = 0; i < str.length(); i++)
-        if (str.at(i) == c)
-            count++;
-    return count;
-}
+        void exchange(std::string &inputFile);
+        void initDatabaseFromCsv(std::string &pathToDatabase);
 
-std::map<date, float> database;
+        void parseLine(std::string &line);
+        int keyChecker(std::string &date);
+        double valueChecker(std::string &_value);
+        void calculateExchangeRate(void);
 
-
-void    exchange(std::string& inputFile);
+        //iterator
+        // std::map<std::string, double>::iterator Iterator;
+};
