@@ -14,9 +14,6 @@
 
 
 
-
-
-
 class BitcoinExchange
 {
     private:
@@ -34,9 +31,6 @@ class BitcoinExchange
 
         void parseLine(std::string &line);
         int keyChecker(std::string &date);
-        double valueChecker(std::string &_value);
+        double valueChecker(std::string &_value, std::string &line);
         void calculateExchangeRate(void);
-
-        //iterator
-        // std::map<std::string, double>::iterator Iterator;
 };

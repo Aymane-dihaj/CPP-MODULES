@@ -5,12 +5,8 @@
 
 int main(int ac, char **av)
 {
-    if (ac < 2)
-    {
-        std::cout << "Error: could not open file.\n";
-        return 1;
-    }
-    else if (ac > 2)
+
+    if (ac != 2)
     {
         std::cout << "Error: Wrong number arguments\n";
         return 1;
